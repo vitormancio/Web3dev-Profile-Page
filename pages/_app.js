@@ -1,11 +1,17 @@
-import { NextUIProvider } from '@nextui-org/react'
+import { NextUIProvider} from '@nextui-org/react'
+import { Navigation } from '../components/Navbar'
 
-import '../styles/globals.css'
+import { createTheme } from "@nextui-org/react"
+
+const darkTheme = createTheme({
+  type: 'dark'
+});
 
 export default function App({ Component, pageProps }) {
   return (
-    <NextUIProvider>
-    <Component {...pageProps} />
+    <NextUIProvider theme={darkTheme} >
+        <Navigation />
+      <Component {...pageProps} />
     </NextUIProvider>
     )
 }
